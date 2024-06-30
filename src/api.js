@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://ntdbackend-3703dd1358c1.herokuapp.com';
 
 export const login = async (username, password) => {
     const params = new URLSearchParams();

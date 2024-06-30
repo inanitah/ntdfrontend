@@ -21,7 +21,7 @@ function App() {
         try {
             const data = await login(username, password);
             console.log('Login successful:', data);
-            setToken(data.access_token);
+            setToken(data.username);
         } catch (error) {
             console.error('Login failed:', error);
         }

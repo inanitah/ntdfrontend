@@ -1,7 +1,6 @@
 import axios from 'axios';
-
-const API_URL = process.env.REACT_APP_API_URL || 'https://ntdbackend-3703dd1358c1.herokuapp.com';
-
+const VERSION = "v1"; // Change to the proper version
+const API_URL = `${process.env.REACT_APP_API_URL || 'https://ntdbackend-3703dd1358c1.herokuapp.com'}/api/${VERSION}`;
 console.log("API URL:", API_URL); // Debugging line to ensure the correct URL is used
 
 export const login = async (username, password) => {

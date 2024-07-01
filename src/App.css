@@ -1,68 +1,106 @@
-/* src/App.css */
-
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #f0f2f5;
   margin: 0;
   padding: 0;
 }
 
 .App {
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-h1 {
+h1, h2 {
   color: #333;
 }
 
-h2 {
-  color: #555;
+/* Form Container Styles */
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"],
-input[type="password"],
-input[type="number"] {
-  width: 200px;
+.form-container h2 {
+  margin-top: 0;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-container input,
+.form-container select,
+.form-container button {
+  width: 100%;
   padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border: 1px solid #d9d9d9;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px 0;
+.form-container button {
+  background-color: #1890ff;
+  color: #fff;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
 }
 
-button:hover {
-  background-color: #45a049;
+.form-container button:hover {
+  background-color: #40a9ff;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+.error {
+  color: red;
 }
 
-li {
+/* Table Container Styles */
+.table-container {
   background-color: #fff;
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  text-align: left;
-  max-width: 400px;
-  margin: 10px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-p {
-  color: #333;
-  font-size: 16px;
+.table-container h2 {
+  margin-top: 0;
+}
+
+.table-container .ant-table {
+  margin-bottom: 20px;
+}
+
+/* Ant Design Overrides */
+.ant-btn-link {
+  padding: 0;
+  color: #1890ff;
+}
+
+.ant-btn-link:hover {
+  color: #40a9ff;
+}
+
+.ant-input {
+  border-radius: 4px;
+}
+
+.ant-select-selector {
+  border-radius: 4px !important;
+}
+
+.ant-pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Custom Styles */
+.button-sign-out {
+  margin-bottom: 20px;
 }

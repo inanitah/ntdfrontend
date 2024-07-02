@@ -91,9 +91,18 @@ function App() {
         try {
             const data = await fetchUserRecords(token, search, page, pageSize);
             console.log('Fetched records:', data);
-            const filteredRecords = data.filter(record => !record.deleted); // Filter out deleted records
-            setRecords(filteredRecords);
-            setTotalRecords(filteredRecords.length);
+            const mappedRecords = data.map(record => ({
+                id: record.id ?? '',
+                operation_id: record.operation_id ?? '',
+                user_id: record.user_id ?? '',
+                amount: record.amount ?? 0,
+                user_balance: record.user_balance ?? 0,
+                operation_response: record.operation_response ?? '',
+                created_at: record.created_at ?? '',
+                deleted: record.deleted ?? false,
+            })).filter(record => !record.deleted);
+            setRecords(mappedRecords);
+            setTotalRecords(mappedRecords.length);
         } catch (error) {
             console.error('Fetch records failed:', error);
             message.error('Fetch records failed');
@@ -109,6 +118,11 @@ function App() {
             console.error('Delete record failed:', error);
             message.error('Delete record failed');
         }
+    };
+
+    const handleTableChange = (pagination) => {
+        setPage(pagination.current);
+        setPageSize(pagination.pageSize);
     };
 
     return (
@@ -239,6 +253,7 @@ function App() {
                             ]}
                             pagination={false}
                             rowKey="id"
+                            onChange={handleTableChange}
                         />
                         <Pagination
                             current={page}

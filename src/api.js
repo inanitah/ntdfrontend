@@ -45,17 +45,13 @@ export const fetchOperations = async (token) => {
 
 export const fetchUserRecords = async (token, search, page, pageSize) => {
     const response = await axios.get(`${API_URL}/records/`, {
-        headers: {
-            Authorization: `Bearer ${token}`
-        },
-        params: {
-            search,
-            skip: (page - 1) * pageSize,
-            limit: pageSize
-        }
+        params: { search, skip: (page - 1) * pageSize, limit: pageSize },
+        headers: { Authorization: `Bearer ${token}` }
     });
     return response.data;
 };
+
+
 
 export const deleteRecord = async (token, recordId) => {
     const response = await axios.delete(`${API_URL}/records/${recordId}`, {

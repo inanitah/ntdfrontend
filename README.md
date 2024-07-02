@@ -45,3 +45,4 @@ Search and view your operation records. You can also delete records.
 
 
 
+### TODO for next version: Implement sorting and filter in the record table
